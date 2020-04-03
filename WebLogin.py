@@ -20,4 +20,12 @@ class WebLogin:
         WebDriverWait(self.driver, 30).until(expected_conditions.presence_of_element_located((By.ID, "Home_logoBox")))
 
     def hc_login(self):
-        print("HC Login")
+        self.driver.get(self.url)
+        WebDriverWait(self.driver, 30).until(expected_conditions.presence_of_element_located((By.ID, "logonuidfield")))
+
+        self.driver.find_element_by_id('logonuidfield').send_keys(self.credential['username'])
+        self.driver.find_element_by_id('logonpassfield').send_keys(self.credential['password'])
+        self.driver.find_element_by_class_name('urBtnStdNew').send_keys(Keys.ENTER)
+
+        WebDriverWait(self.driver, 30).until(expected_conditions.presence_of_element_located((By.ID, "WD3F")))
+        print("HC Clock In")

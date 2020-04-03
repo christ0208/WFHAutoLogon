@@ -33,3 +33,4 @@ if __name__ == '__main__':
     prep_chrome_driver()
     messier_url, messier_credential, hc_url, hc_credential = fetch_necessary_data()
     WebLogin(chrome_driver, messier_url, messier_credential).messier_login()
+    WebLogin(chrome_driver, hc_url, hc_credential).hc_login()
