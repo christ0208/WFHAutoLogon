@@ -8,6 +8,8 @@ CURRENT_USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--incognito')
 chrome_options.add_argument('--user-agent=' + CURRENT_USER_AGENT)
+chrome_options.add_argument('--ignore-ssl-errors=yes')
+chrome_options.add_argument('--ignore-certificate-errors')
 
 chrome_driver = None
 
