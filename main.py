@@ -6,6 +6,7 @@ from selenium import webdriver
 
 CURRENT_USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36'
 chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--incognito')
 chrome_options.add_argument('--user-agent=' + CURRENT_USER_AGENT)
 
 chrome_driver = None
