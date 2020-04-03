@@ -27,5 +27,5 @@ class WebLogin:
         self.driver.find_element_by_id('logonpassfield').send_keys(self.credential['password'])
         self.driver.find_element_by_class_name('urBtnStdNew').send_keys(Keys.ENTER)
 
-        WebDriverWait(self.driver, 30).until(expected_conditions.presence_of_element_located((By.ID, "WD3F")))
+        WebDriverWait(self.driver, 60).until(expected_conditions.presence_of_element_located((By.ID, "WD3F")))
         print("HC Clock In")
