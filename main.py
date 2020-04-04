@@ -29,7 +29,7 @@ def prep_chrome_driver():
 
 
 if __name__ == '__main__':
-    load_dotenv()
+    load_dotenv(override=True)
     prep_chrome_driver()
     messier_url, messier_credential, hc_url, hc_credential = fetch_necessary_data()
     WebLogin(chrome_driver, messier_url, messier_credential).messier_login()
