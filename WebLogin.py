@@ -3,6 +3,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import WebDriverWait
 
+
 class WebLogin:
     def __init__(self, driver, url, credential):
         self.driver = driver
@@ -27,5 +28,5 @@ class WebLogin:
         self.driver.find_element_by_id('logonpassfield').send_keys(self.credential['password'])
         self.driver.find_element_by_class_name('urBtnStdNew').send_keys(Keys.ENTER)
 
-        WebDriverWait(self.driver, 60).until(expected_conditions.presence_of_element_located((By.ID, "WD3F")))
-        print("HC Clock In")
+        WebDriverWait(self.driver, 60).until(expected_conditions.presence_of_element_located((By.XPATH, "//div[@id='WD3F']")))
+        self.driver.find_element_by_xpath("//div[@id='WD3F']").click()
